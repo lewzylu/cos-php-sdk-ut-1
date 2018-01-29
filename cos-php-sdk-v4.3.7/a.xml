@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="cos" tests="12" assertions="12" failures="0" errors="0" time="1.565766">
+    <testsuite name="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" tests="12" assertions="12" failures="0" errors="0" time="1.565766">
+      <testcase name="testUploadFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="38" assertions="1" time="0.131951"/>
+      <testcase name="testStatFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="46" assertions="1" time="0.083820"/>
+      <testcase name="testDownloadFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="57" assertions="1" time="0.164841"/>
+      <testcase name="testUpdateFileInfo" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="66" assertions="1" time="0.113923"/>
+      <testcase name="testCopyFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="82" assertions="1" time="0.174520"/>
+      <testcase name="testMoveFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="91" assertions="1" time="0.169079"/>
+      <testcase name="testDeleteFile" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="100" assertions="1" time="0.151458"/>
+      <testcase name="testCreateFolder" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="109" assertions="1" time="0.101869"/>
+      <testcase name="testListFolder" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="118" assertions="1" time="0.117608"/>
+      <testcase name="testUpdateFolderInfo" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="128" assertions="1" time="0.116002"/>
+      <testcase name="testStatFolder" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="138" assertions="1" time="0.105044"/>
+      <testcase name="testDelteFolder" class="Qcloud\Cos\Tests\Test" file="E:\phput\cos-php-sdk-v4.3.7\src\qcloud\cos\Test.php" line="147" assertions="1" time="0.135651"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
