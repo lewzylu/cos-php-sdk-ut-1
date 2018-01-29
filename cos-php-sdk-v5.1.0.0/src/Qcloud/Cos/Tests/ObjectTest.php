@@ -19,7 +19,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
     public function testPutObject() {
         try {
             $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            sleep(2);
+            sleep(5);
             $this->cosClient->putObject(array(
                         'Bucket' => 'testbucket', 'Key' => 'hello.txt', 'Body' => 'Hello World'));
         } catch (\Exception $e) {
