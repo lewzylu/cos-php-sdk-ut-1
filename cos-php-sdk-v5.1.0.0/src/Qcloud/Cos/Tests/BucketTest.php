@@ -30,17 +30,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
-    public function testCreateAlreadyExistedBucket() {
-        try {
-            $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            time.sleep(5);
-            $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-        } catch (CosException $e) {
-            $this->assertTrue($e->getExceptionCode() === 'BucketAlreadyExists');
-            $this->assertTrue($e->getStatusCode() === 409);
-        }
-    }
-
     public function testDeleteBucket() {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
