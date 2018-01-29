@@ -30,8 +30,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
-            sleep(2);
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
         }
@@ -42,8 +40,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
-            sleep(2);
+            sleep(5);
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
             var_dump($result);
         } catch (\Exception $e) {
@@ -55,8 +52,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
-            sleep(2);
         } catch (CosException $e) {
             $this->assertTrue($e->getExceptionCode() === 'NoSuchBucket');
             $this->assertTrue($e->getStatusCode() === 404);
@@ -67,7 +62,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            sleep(2);
+            sleep(5);
             $result = $this->cosClient->putObject(array(
                 'Bucket' => 'testbucket', 'Key' => 'hello.txt', 'Body' => 'Hello World!'));
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
