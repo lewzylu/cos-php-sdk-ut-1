@@ -34,9 +34,8 @@ class BucketTest extends \PHPUnit_Framework_TestCase {
     public function testCreateAlreadyExistedBucket() {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
+            time.sleep(5)
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
         } catch (CosException $e) {
             $this->assertTrue($e->getExceptionCode() === 'BucketAlreadyExists');
             $this->assertTrue($e->getStatusCode() === 409);
@@ -46,9 +45,8 @@ class BucketTest extends \PHPUnit_Framework_TestCase {
     public function testDeleteBucket() {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
+            time.sleep(5)
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
         }
@@ -57,7 +55,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase {
     public function testDeleteNonexistedBucket() {
         try {
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
+            time.sleep(5)
         } catch (CosException $e) {
             $this->assertTrue($e->getExceptionCode() === 'NoSuchBucket');
             $this->assertTrue($e->getStatusCode() === 404);
@@ -67,6 +65,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase {
     public function testDeleteNonemptyBucket() {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
+            time.sleep(5)
             $this->cosClient->putObject(array(
                         'Bucket' => 'testbucket', 'Key' => 'hello.txt', 'Body' => 'Hello World!'));
             $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
