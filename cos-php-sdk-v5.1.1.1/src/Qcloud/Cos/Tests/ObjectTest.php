@@ -28,7 +28,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
     public function testPutObject() {
         try {
             $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            sleep(2);
+            sleep(5);
             $this->cosClient->putObject(array(
                         'Bucket' => 'testbucket', 'Key' => 'hello.txt', 'Body' => 'Hello World'));
         } catch (\Exception $e) {
@@ -50,7 +50,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
             var_dump($result);
-            sleep(2);
+            sleep(5);
             $this->cosClient->upload('testbucket', '你好.txt', 'Hello World');
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
@@ -61,7 +61,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
             var_dump($result);
-            sleep(2);
+            sleep(5);
             $this->cosClient->upload('testbucket', '→↓←→↖↗↙↘! \"#$%&\'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~', 'Hello World');
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
