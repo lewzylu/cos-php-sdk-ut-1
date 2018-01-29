@@ -72,7 +72,7 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         try {
             $this->cosClient->createBucket(array('Bucket' => 'testbucket-1252448703'));
             sleep(5);
-            $this->cosClient->upload('testbucket-1252448703', 'hello.txt', str_repeat('a', 20 * 1024 * 1024));
+            $this->cosClient->upload('testbucket-1252448703', 'hello.txt', str_repeat('a', 9 * 1024 * 1024));
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
         }
