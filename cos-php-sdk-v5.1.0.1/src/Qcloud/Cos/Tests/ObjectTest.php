@@ -38,25 +38,15 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
     public function testUploadSmallObject() {
         try {
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
             sleep(5);
             $this->cosClient->upload('testbucket', '你好.txt', 'Hello World');
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
         }
     }
-    public function testUploadComplexObject() {
-        try {
-            $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
-            sleep(5);
-            $this->cosClient->upload('testbucket-1252448703', '→↓←→↖↗↙↘! \"#$%&\'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~', 'Hello World');
-        } catch (\Exception $e) {
-            $this->assertFalse(true, $e);
-        }
-    }
     public function testUploadLargeObject() {
         try {
+            sleep(2);
             $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
             sleep(5);
             $this->cosClient->upload('testbucket', 'hello.txt', str_repeat('a', 9 * 1024 * 1024));
