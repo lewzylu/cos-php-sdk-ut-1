@@ -133,7 +133,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
 {
     try {
         $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-        sleep(2);
+        sleep(5);
         $result = $this->cosClient->putBucketCors(array(
             // Bucket is required
             'Bucket' => 'testbucket',
@@ -152,7 +152,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase
                 // ... repeated
             ),
         ));
-        var_dump($result);
     } catch (\Exception $e) {
         $this->assertFalse(true, $e);
     }
@@ -160,7 +159,7 @@ class BucketTest extends \PHPUnit_Framework_TestCase
     public function testGetBucketCors() {
     try {
         $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-        sleep(2);
+        sleep(5);
         $result = $this->cosClient->putBucketCors(array(
             // Bucket is required
             'Bucket' => 'testbucket',
@@ -182,14 +181,13 @@ class BucketTest extends \PHPUnit_Framework_TestCase
         $result = $this->cosClient->getBucketCors(array(
             'Bucket' => 'testbucket',
         ));
-        var_dump($result);
     } catch (\Exception $e) {
         $this->assertFalse(true, $e);
     }}
     public function testDeleteBucketCors() {
     try {
         $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
-        sleep(2);
+        sleep(5);
         $result = $this->cosClient->putBucketCors(array(
             // Bucket is required
             'Bucket' => 'testbucket',
@@ -211,7 +209,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase
         $result = $this->cosClient->deleteBucketCors(array(
             'Bucket' => 'testbucket',
         ));
-        var_dump($result);
     } catch (\Exception $e) {
         $this->assertFalse(true, $e);
     }}
