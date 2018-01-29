@@ -84,4 +84,4 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
             $this->assertFalse(true, $e);
         }
     }
- 
+}
