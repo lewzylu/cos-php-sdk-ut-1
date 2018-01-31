@@ -42,7 +42,6 @@ class BucketTest extends \PHPUnit_Framework_TestCase
             $result = $this->cosClient->createBucket(array('Bucket' => 'testbucket'));
             sleep(5);
             $result = $this->cosClient->deleteBucket(array('Bucket' => 'testbucket'));
-            var_dump($result);
         } catch (\Exception $e) {
             $this->assertFalse(true, $e);
         }
