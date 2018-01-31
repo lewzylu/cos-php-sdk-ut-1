@@ -24,16 +24,6 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         TestHelper::nuke('testbucket-1252448703');
         sleep(2);
     }
-    public function testPut111() {
-        try {
-            $this->cosClient->createBucket(array('Bucket' => 'testbucket-1252448703'));
-            sleep(5);
-            $this->cosClient->putObject(array(
-                        'Bucket' => 'testbucket-1252448703', 'Key' => 'hello.txt', 'Body' => 'Hello World'));
-        } catch (\Exception $e) {
-            $this->assertFalse(true, $e);
-        }
-    }
     public function testPutObject() {
         try {
             $this->cosClient->createBucket(array('Bucket' => 'testbucket-1252448703'));
