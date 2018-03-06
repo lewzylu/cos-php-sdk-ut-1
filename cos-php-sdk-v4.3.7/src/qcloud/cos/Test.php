@@ -1,6 +1,6 @@
 <?php
 namespace Qcloud\Cos\Tests;
-require('/../../../include.php');
+require('include.php');
 use QCloud\Cos\Api;
 class Test extends \PHPUnit_Framework_TestCase {
     private $cosClient;
