@@ -18,9 +18,9 @@ class Test extends \PHPUnit_Framework_TestCase {
         );
         $this->cosApi = new Api($config);
         $this->bucket = 'testbucketv4'. $config['region'];
-        $this->cospath = '→↓←→↖↗↙↘! \"#$%&\'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+        $this->cospath = 'aaa';
         $this->localpath = "111";
-        $this->folder = "新建folder";
+        $this->folder = "111folder";
         $file = $this->localpath;
         file_put_contents($file,"12345",FILE_APPEND);
     }
